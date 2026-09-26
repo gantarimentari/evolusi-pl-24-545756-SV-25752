@@ -10,7 +10,7 @@
         <h1 class="text-2xl font-bold mb-4">Aplikasi To-Do List (Four Quadrants)</h1>
 
         <!-- Form Tambah Tugas -->
-        <form action="{{ route('tasks.index') }}" method="POST" class="mb-6 flex gap-4">
+        <form action="{{ route('tasks.store') }}" method="POST" class="mb-6 flex gap-4">
             @csrf
             <input type="text" name="title" placeholder="Judul tugas..." required class="border p-2 rounded flex-1">
             <select name="quadrant" class="border p-2 rounded">
@@ -26,7 +26,7 @@
         <ul>
             @foreach($tasks as $task)
                 <li class="border-b py-2 flex justify-between items-center">
-                  <span>{{ $task->title }} (Kuadran {{ $task->quadrant }})</span>
+                    <span>{{ $task->title }} (Kuadran {{ $task->quadrant }})</span>
                 </li>
             @endforeach
         </ul>
