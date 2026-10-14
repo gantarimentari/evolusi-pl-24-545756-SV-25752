@@ -57,8 +57,8 @@ onMounted(loadTasks)
   <div class="page-shell">
     <header class="topbar">
       <RouterLink class="brand" to="/">
-        <span class="brand-mark">Q</span>
-        <span>Quadrant</span>
+        
+        
       </RouterLink>
       <nav class="navigation" aria-label="Navigasi utama">
         <RouterLink class="nav-link" to="/">Beranda</RouterLink>
