@@ -93,20 +93,12 @@ jobs:
       run:
         working-directory: ./frontend
     steps:
-      - name: Checkout Repository
+      - name: Checkout Repository  
         uses: actions/checkout@v4
 
-      - name: Download Build Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: dist-files
-          path: ./frontend/dist
+      
 
-      - name: Display dist Contents
-        run: |
-          echo "Isi dist/ dari artifact build:"
-          find ./frontend/dist -maxdepth 2 -type f -print
-        working-directory: .
+     
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
@@ -118,7 +110,7 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Deploy Prebuilt Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy  --prod --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
