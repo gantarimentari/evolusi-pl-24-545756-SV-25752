@@ -102,6 +102,12 @@ jobs:
           name: dist-files
           path: ./frontend/dist
 
+      - name: Display dist Contents
+        run: |
+          echo "Isi dist/ dari artifact build:"
+          find ./frontend/dist -maxdepth 2 -type f -print
+        working-directory: .
+
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
